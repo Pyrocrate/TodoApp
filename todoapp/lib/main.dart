@@ -5,8 +5,8 @@ import 'pages/todoCards.dart';
 import 'pages/todo.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: 'root',
+      initialRoute: 'root1',
       routes: {
-        'root': (context) => todo(),
+        'root1': (context) => todo(),
       },
     ));
