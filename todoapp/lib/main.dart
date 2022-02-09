@@ -3,7 +3,12 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'todoCards.dart';
 
-void main() => runApp(MaterialApp(home: todo()));
+void main() => runApp(MaterialApp(
+      initialRoute: 'root',
+      routes: {
+        'root': (context) => todo(),
+      },
+    ));
 
 class todo extends StatefulWidget {
   const todo({Key? key}) : super(key: key);
