@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'pages/todoCards.dart';
-import 'pages/todo.dart';
+import 'package:todoapp/pages/tasks_page.dart';
 
-void main() => runApp(MaterialApp(initialRoute: 'root', routes: {
-      'root': (context) => todo(),
-    }));
+void main() => runApp(MaterialApp(
+      home: tasksPage(),
+    ));
+
+class todoApp extends StatelessWidget {
+  const todoApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(initialRoute: 'home', routes: {
+      'home': (context) => tasksPage(),
+    });
+  }
+}
