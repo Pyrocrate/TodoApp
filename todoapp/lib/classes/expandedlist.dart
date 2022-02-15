@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 
-class expandedListBuilder extends StatefulWidget {
-  var tasks = [];
-  var index;
-  expandedListBuilder({required this.tasks, this.index});
-
-  @override
-  _expandedListBuilderState createState() =>
-      _expandedListBuilderState(tasks: tasks, index: index);
-}
-
-class _expandedListBuilderState extends State<expandedListBuilder> {
+class expandedTileBuilder extends StatelessWidget {
   var tasks = [];
   var index;
 
-  _expandedListBuilderState({required this.tasks, this.index});
+  expandedTileBuilder({required this.tasks, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +33,6 @@ class _expandedListBuilderState extends State<expandedListBuilder> {
                 child: Text(tasks[index]['description'],
                     style: TextStyle(
                       fontSize: 15,
-                      letterSpacing: 2,
                     )),
               ),
             )
