@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/main.dart';
 
-class newTask extends StatefulWidget {
+class newTask extends StatelessWidget {
   const newTask({Key? key}) : super(key: key);
 
   @override
-  _newTaskState createState() => _newTaskState();
-}
-
-class _newTaskState extends State<newTask> {
-  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(),           
+    );
   }
 }
