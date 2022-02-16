@@ -6,8 +6,20 @@ class newTask extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(),           
+    return SafeArea(
+      child: Scaffold(
+        body: Column(children: [
+          SizedBox(
+            height: 20,
+          ),
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Enter Task",
+              suffixIcon: Icon(Icons.add),
+            ),
+          )
+        ]),
+      ),
     );
   }
 }

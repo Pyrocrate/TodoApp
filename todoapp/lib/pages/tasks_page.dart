@@ -33,22 +33,27 @@ class _tasksPageState extends State<tasksPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.grey[200],
-          body: ListView.builder(
-            itemCount: tasks.length,
-            itemBuilder: (context, index) {
-              return expandedTileBuilder(tasks: tasks, index: index);
-            },
-          ),
-          floatingActionButton: ElevatedButton(
+        backgroundColor: Colors.grey[200],
+        body: ListView.builder(
+          itemCount: tasks.length,
+          itemBuilder: (context, index) {
+            return expandedTileBuilder(tasks: tasks, index: index);
+          },
+        ),
+        floatingActionButton: ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, 'newTask');
             },
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all(CircleBorder()),
-            ),
-            child: Icon(Icons.add),
-          )),
+            style: ElevatedButton.styleFrom(
+                fixedSize: Size(150, 50),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30))),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Icon(Icons.add), Text("Add Task")],
+            )),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      ),
     );
   }
 }
