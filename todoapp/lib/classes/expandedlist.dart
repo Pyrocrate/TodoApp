@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
+import 'package:http/http.dart';
 
 class expandedTileBuilder extends StatelessWidget {
-  var tasks = [];
-  var index;
+  Map task = {};
+  Function() delete;
 
-  expandedTileBuilder({required this.tasks, required this.index});
+  expandedTileBuilder({required this.task, required this.delete});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +14,10 @@ class expandedTileBuilder extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: ExpansionTileCard(
-          leading: Icon(tasks[index]['icon'], color: tasks[index]['color']),
-          title: Text(tasks[index]['title']),
+          leading: Icon(task['icon'], color: task['color']),
+          title: Text(task['title']),
           subtitle: Text(
-            tasks[index]['subtitle'],
+            task['subtitle'],
             style: TextStyle(
               color: Colors.grey[700],
             ),
@@ -30,11 +31,29 @@ class expandedTileBuilder extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: Padding(
                 padding: EdgeInsets.all(10),
-                child: Text(tasks[index]['description'],
+                child: Text(task['description'],
                     style: TextStyle(
                       fontSize: 15,
                     )),
               ),
+            ),
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: delete,
+                  icon: Icon(
+                    Icons.delete,
+                    color: Colors.red,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    print("hello there");
+                  },
+                  icon: Icon(Icons.done, color: Colors.green),
+                )
+              ],
             )
           ],
           // trailing: Row(mainAxisSize: MainAxisSize.min, children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:todoapp/main.dart';
 import 'package:todoapp/classes/expandedlist.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
@@ -37,7 +38,17 @@ class _tasksPageState extends State<tasksPage> {
         body: ListView.builder(
           itemCount: tasks.length,
           itemBuilder: (context, index) {
-            return expandedTileBuilder(tasks: tasks, index: index);
+            return expandedTileBuilder(
+              task: tasks[index],
+              delete: () {
+                SchedulerBinding.instance?.addPostFrameCallback((timeStamp) {
+                  setState(() {
+                    print(tasks);
+                    tasks.remove(tasks[index]);
+                  });
+                });
+              },
+            );
           },
         ),
         floatingActionButton: ElevatedButton(
