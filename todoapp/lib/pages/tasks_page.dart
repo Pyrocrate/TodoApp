@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:todoapp/main.dart';
-import 'package:todoapp/classes/expandedlist.dart';
+import 'package:todoapp/pages/expandedlist.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 
 class tasksPage extends StatefulWidget {
