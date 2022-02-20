@@ -9,9 +9,12 @@ class todoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(initialRoute: 'home', routes: {
-      'home': (context) => tasksPage(),
-      'newTask': (context) => newTask(),
-    });
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: 'home',
+        routes: {
+          'home': (context) => tasksPage(),
+          'newTask': (context) => newTask(),
+        });
   }
 }
