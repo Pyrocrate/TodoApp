@@ -10,9 +10,9 @@ Constraints
 1 <= a,b,c <= 1000
 '''
 
-l=sorted([int(input()) for _ in range(3)])
-count=0
+l=sorted([int(input()) for k in range(3)])
+c=0
 for i in range(1,l[0]+1):
     if l[0]%i==0 and l[1]%i==0 and l[2]%i==0:
-        count+=1
-print(count)
+        c+=1
+print(c)
